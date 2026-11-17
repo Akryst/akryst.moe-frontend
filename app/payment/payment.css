@@ -1,0 +1,33 @@
+.payment-page { position: relative; z-index: 1; min-height: 100dvh; isolation: isolate; color: #f3f4f5; }
+.payment-page::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #080d1440 0%, #080d14b8 38%, #080d14f2 76%); }
+.payment-inner { width: min(1120px, calc(100% - 96px)); min-height: 100dvh; margin: auto; padding: 132px 0 72px; display: flex; align-items: center; justify-content: flex-end; }
+.payment-content { width: min(100%, 480px); }
+.payment-back { display: inline-flex; align-items: center; gap: 8px; padding: 5px 0; color: #b3bec5; font: 11px ui-monospace, monospace; transition: color .15s; }
+.payment-back:hover { color: #f3f4f5; }
+.payment-heading { margin: 32px 0 30px; }
+.payment-heading h1 { font-family: "Spanish", sans-serif; font-size: clamp(40px, 4.5vw, 58px); font-weight: normal; line-height: 1.15; letter-spacing: .03em; }
+.payment-heading p { max-width: 340px; color: #b3bec5; font-size: 14px; line-height: 1.8; margin-top: 18px; }
+.payment-methods { list-style: none; padding: 0; border-top: 1px solid #f3f4f526; }
+.payment-methods li { border-bottom: 1px solid #f3f4f526; }
+.payment-method { display: grid; grid-template-columns: 25px minmax(0, 1fr) 16px; align-items: center; gap: 18px; padding: 23px 4px; text-decoration: none; transition: background-color .15s; }
+.payment-method:hover { background: #f3f4f508; }
+.payment-icon { flex-shrink: 0; }
+.payment-method-copy { min-width: 0; }
+.payment-method-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; }
+.payment-method-heading strong { font-size: 17px; font-weight: 500; }
+.payment-address { color: #9eaebc; font: 10px/1.7 ui-monospace, monospace; overflow-wrap: anywhere; }
+.payment-description { display: block; color: #b3bec5; font-size: 13px; line-height: 1.7; margin-top: 5px; }
+.payment-external { color: #9eaebc; }
+.payment-method:hover .payment-external { color: #f3f4f5; }
+.payment-page a:focus-visible { outline: 2px solid #8dcfd7; outline-offset: 6px; border-radius: 2px; }
+@media (max-width: 640px) {
+  .payment-page::before { background: #080d14d9; }
+  .payment-inner { width: calc(100% - 48px); padding: 112px 0 54px; align-items: flex-start; justify-content: center; }
+  .payment-content { max-width: 440px; }
+  .payment-heading { margin-top: 30px; }
+  .payment-heading h1 { font-size: 44px; }
+  .payment-method { gap: 14px; padding: 21px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .payment-page a { transition: none; }
+}
